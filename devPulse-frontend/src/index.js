@@ -22,14 +22,14 @@ root.render(
     {/* <App /> */}
    {/* <Home/> */}
    {/* <About/> */}
-   {/* <Services/> */}
+   <Services/>
    {/* <Testimonials/> */}
    {/* <Clients/> */}
   {/* <TeamSection/> */}
   {/* <Contact/> */}
   {/* <FAQ/> */}
   {/* <Footer/> */}
-  <Portfolio/>
+  {/* <Portfolio/> */}
   </React.StrictMode>
 );
 
