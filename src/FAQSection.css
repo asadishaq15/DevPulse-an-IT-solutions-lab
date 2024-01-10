@@ -1,0 +1,37 @@
+/* .accordion {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  
+  .accordion-header {
+    background-color: #f1f1f1;
+    padding: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-header:hover {
+    background-color: #ddd;
+  }
+  
+  .accordion-header.open {
+    background-color: #ddd;
+  }
+  
+  .accordion-header span {
+    float: right;
+  }
+  
+  .accordion-body {
+    padding: 15px;
+    display: none;
+    background-color: #f9f9f9;
+    transition: max-height 0.3s ease;
+  }
+  
+  .accordion-body.open {
+    display: block;
+  }
+   */
