@@ -1,0 +1,113 @@
+/* CustomCarousel.css */
+
+/* Example customization for the dots */
+.slide-content {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+}
+.slide-content .text-content.left-align {
+  order: 2; /* Change the order to 2 to align text content to the left */
+  
+}
+
+.slide-content .content {
+  display: flex;
+  justify-content: space-between;
+}
+.slide-content .text-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  margin: 30px;
+  color: #dc310a;
+}
+
+.slide-content h1 {
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  margin-bottom: 20px;
+}
+.slide-content .image-content {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.slide-content .image-content img {
+  width: 100%;
+  object-fit: cover;
+
+}
+.slide-content img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.slide-content button {
+  padding: 10px 20px;
+  background-color: #ff5733;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.slide-content button:hover {
+  background-color: #e04425;
+}
+
+
+.custom-carousel-wrapper {
+  position: relative;
+}
+
+
+.slick-dots {
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent; /* Set dot background color to transparent */
+  cursor: pointer;
+  position: relative;
+}
+
+.slick-dots li button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px; /* Small background width */
+  height: 8px; /* Small background height */
+  background-color: #726969; /* Small background color */
+  border-radius: 50%;
+  transition: background-color 0.3s ease; /* Add transition for smoother color change */
+}
+
+.slick-dots li.slick-active button::before {
+  background-color: #333;
+}

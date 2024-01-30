@@ -66,6 +66,12 @@
     text-align: center;
     padding: 8px 16px; /* Adjust padding as needed */
     margin: 0 auto;
+
+  }
+  .image-width{
+    aspect-ratio: 3/2;
+    object-fit: contain;
+ 
   }
   
   /* Media queries for responsiveness */
