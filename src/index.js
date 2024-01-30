@@ -15,14 +15,20 @@ import Contact from './components/contact';
 import FAQ from './components/faq';
 import Footer from './components/foot';
 import Portfolio from './components/portfolio';
+import { BrowserRouter } from 'react-router-dom';
+import Carousel from './components/caorusel/carouselComp';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+
+<BrowserRouter>
+
     {/* <App /> */}
    {/* <Home/> */}
    {/* <About/> */}
-   <Services/>
+   {/* <Services/> */}
    {/* <Testimonials/> */}
    {/* <Clients/> */}
   {/* <TeamSection/> */}
@@ -30,6 +36,10 @@ root.render(
   {/* <FAQ/> */}
   {/* <Footer/> */}
   {/* <Portfolio/> */}
+<Carousel/>
+
+  </BrowserRouter>
+ 
   </React.StrictMode>
 );
 

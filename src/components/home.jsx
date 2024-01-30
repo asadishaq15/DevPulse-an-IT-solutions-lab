@@ -4,10 +4,12 @@ import Footer from './foot'
 import Contact from './contact'
 import FAQSection from './faq'
 import TeamSection from './team'
+import Services from './services'
 
 const Home = () => {
   return (
     <div>
+      
       <Navbar/>
        <section id="home" className="home">
       <h1>Bring your Business Online</h1>
@@ -16,6 +18,7 @@ const Home = () => {
       <div className="wave wave2"></div>
       <div className="wave wave3"></div>
     </section>
+    <Services/>
     <TeamSection/>
     <Contact/>
     <FAQSection/>
