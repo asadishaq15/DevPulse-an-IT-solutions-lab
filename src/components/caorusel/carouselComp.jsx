@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { motion, AnimatePresence } from 'framer-motion';
-import bg_slide1 from "../../images/img1.jpg";
+import bg_slide1 from "../../images/img2.jpg";
 
 import './carousel.css';
 
@@ -44,7 +44,7 @@ function NextArrow(props) {
     ></div>
   );
 }
-const SlideContent = ({ title, description, buttonText, rightImageSrc }) => {
+const SlideContent = ({ title1,title2, description, buttonText, rightImageSrc,isButtonVisible ,index}) => {
   const [isTapped, setIsTapped] = useState(false);
   const handleTapStart = () => {
     setIsTapped(true);
@@ -58,6 +58,7 @@ const SlideContent = ({ title, description, buttonText, rightImageSrc }) => {
   const handleTapCancel = () => {
     setIsTapped(false);
   };
+  const isFirstSlide = index === 0;
   return (
 
     <motion.div
@@ -69,38 +70,81 @@ const SlideContent = ({ title, description, buttonText, rightImageSrc }) => {
   >
     <div className="slide-content">
       <div className="text-content">
-      <motion.h1
-  initial={{ translateY: "100%", opacity: 0 }}
-  animate={{ translateY: "0%", opacity: 1 }}
-  transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
->
-  {title}
-</motion.h1>
-        <motion.p initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8, ease: 'easeOut', delay: 1.5 }}>
+        <motion.h1
+          style={{
+            color: "red",
+            fontSize:"43px", // Set your desired font size
+          }}
+          initial={{ translateY: "100%", opacity: 0 }}
+          animate={{ translateY: "0%", opacity: 1 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
+        >
+          {title1}
+        </motion.h1>
+        <motion.h1
+          style={{
+            color: isFirstSlide ? "red" : "black",
+            fontSize: isFirstSlide ? "45px" : "43px", // Set your desired font size
+          }}
+          initial={{ translateY: "100%", opacity: 0 }}
+          animate={{ translateY: "0%", opacity: 1 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 1.0 }}
+        >
+          {title2}
+        </motion.h1>
+        <motion.p
+          style={{
+            color: isFirstSlide ? "white" : "black",
+            fontSize: isFirstSlide ? "20px" : "15px", // Set your desired font size
+          }}
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 1.5 }}
+        >
           {description}
         </motion.p>
-        <motion.button initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.8, ease: 'easeOut', delay: 2.5 }}>
-          {buttonText}
-        </motion.button>
+        {isButtonVisible && (
+          <motion.button
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 2.5 }}
+            whileTap={{ scale: 0.8 }}
+            onTapStart={handleTapStart}
+            onTap={handleTapEnd}
+            onTapCancel={handleTapCancel}
+            className={`your-read-more-button-styles ${isTapped ? 'tapped' : ''}`}
+            style={{
+              fontSize: "1.2em",
+              marginTop: "20px",
+            }}
+          >
+            {buttonText}
+          </motion.button>
+        )}
       </div>
       {rightImageSrc && (
-  <motion.div
-    className="image-content"
-    initial={{ opacity: 0, x: -50 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8, ease: 'easeOut', delay: 1.0 }}
-  >
-    <motion.img
-      src={rightImageSrc}
-      alt={title}
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut', delay: 1.0 }}
-    />
-  </motion.div>
-)}
+        <motion.div
+          className="image-content"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 1.0 }}
+        >
+          <motion.img
+            src={rightImageSrc}
+            alt={title1}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 1.0 }}
+            style={{
+              width: "100%",
+              borderRadius: "10px",
+            }}
+          />
+        </motion.div>
+      )}
     </div>
   </motion.div>
+
   );
 };
 
@@ -120,32 +164,36 @@ const Carousel = () => {
   const sliderRef = useRef(null);
   const slides = [
     {
-      title: "WELCOME TO DevVerse",
+      title1: "WELCOME TO",
+      title2: "DevVerse",
       description: "Leading top software house in Pakistan. We offer our services in web designing, CRM systems, digital marketing, and mobile apps.",
-      buttonText: "Read More",
       rightImageSrc: bg_slide1, // Add the right image source
-     
+      
     },
     {
-      title: "Mobile Apps Development",
+      title1: "Mobile Apps Development",
+      title2: "We Build Awesome Apps",
       description: "We know how to build Apps that will help you increase business.",
       buttonText: "Read More",
       rightImageSrc: "https://cdn.pixabay.com/photo/2023/02/26/07/37/android-mobile-app-development-7815022_1280.png", // Add the right image source
-      backgroundColor:"#f8f8ff"
+      backgroundColor:"#f2f3f4"
     },
     {
-      title: "Web Development Responsive & Reliable",
+    
+      title1: "Web Development",
+      title2: "Responsive & Reliable",
       description: "We plan, design your website from start to finish, ensuring a high ROI for clients. Our major concern is client satisfaction.",
       buttonText: "Read More",
       rightImageSrc: "https://cdn.pixabay.com/photo/2019/10/09/07/28/development-4536630_1280.png", // Add the right image source
-      backgroundColor:"#d3d3d3"
+      backgroundColor:"#e5e4e2 "
     },
     {
-      title: "Search Engine Optimization",
+      title1: "Search Engine",
+      title2: "Optimization",
       description: "We start the SEO process with a full website audit and recommendations report. Our team will review your key metrics, perform keyword research, analyze your competitors, your linkscape, and key pages of your website, and create a detailed implementation plan.",
       buttonText: "Read More",
       rightImageSrc: "https://cdn.pixabay.com/photo/2016/10/17/03/01/seo-1746842_1280.png", // Add the right image source
-      backgroundColor:"#dcdcdc "
+      backgroundColor:"#bebebe  "
     },
   ];
 
@@ -212,10 +260,12 @@ const Carousel = () => {
             <AnimatePresence exitBeforeEnter={false} initial={false}>
               {currentSlide === index && (
                 <SlideContent
-                  title={slide.title}
+                  title1={slide.title1}
+                  title2={slide.title2}
                   description={slide.description}
                   buttonText={slide.buttonText}
                   rightImageSrc={slide.rightImageSrc}
+                  isButtonVisible={index !== 0} // Don't render the button on the first slide
                 />
               )}
             </AnimatePresence>
