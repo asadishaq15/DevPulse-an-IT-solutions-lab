@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import bg_slide1 from "../../images/img2.jpg";
 import Arrow from './arrow';
 import './carousel.css';
+import GoToTop from '../gotoTop/goToTop';
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
@@ -303,7 +304,10 @@ const Carousel = () => {
         </Arrow>
       </div>
     )}
+   
   </div>
+    
+  
   );
 };
 

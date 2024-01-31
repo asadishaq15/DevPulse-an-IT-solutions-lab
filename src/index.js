@@ -28,7 +28,7 @@ root.render(
     {/* <App /> */}
    {/* <Home/> */}
    {/* <About/> */}
-   {/* <Services/> */}
+   <Services/>
    {/* <Testimonials/> */}
    {/* <Clients/> */}
   {/* <TeamSection/> */}
@@ -36,7 +36,7 @@ root.render(
   {/* <FAQ/> */}
   {/* <Footer/> */}
   {/* <Portfolio/> */}
-<Carousel/>
+{/* <Carousel/> */}
 
   </BrowserRouter>
  
