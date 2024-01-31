@@ -1,6 +1,4 @@
-/* CustomCarousel.css */
 
-/* Example customization for the dots */
 .slide-content {
   position: relative;
   overflow: hidden;
@@ -12,6 +10,7 @@
   order: 2; /* Change the order to 2 to align text content to the left */
   
 }
+
 
 .slide-content .content {
   display: flex;
@@ -42,6 +41,7 @@
   align-items: center;
 }
 .slide-content .image-content img {
+  height: 100%;
   width: 100%;
   object-fit: cover;
 
@@ -72,10 +72,11 @@
 
 
 .slick-dots {
+  position: absolute;
   bottom: 20px;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .slick-dots li {
@@ -85,12 +86,12 @@
 .slick-dots li button {
   font-size: 0;
   line-height: 0;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   padding: 5px;
   border: none;
   border-radius: 50%;
-  background-color: transparent; /* Set dot background color to transparent */
+  background-color: transparent;
   cursor: pointer;
   position: relative;
 }
@@ -101,8 +102,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px; /* Small background width */
-  height: 8px; /* Small background height */
+  width: 15px; /* Small background width */
+  height: 15px; /* Small background height */
   background-color: #726969; /* Small background color */
   border-radius: 50%;
   transition: background-color 0.3s ease; /* Add transition for smoother color change */
@@ -111,3 +112,6 @@
 .slick-dots li.slick-active button::before {
   background-color: #333;
 }
+
+
+
