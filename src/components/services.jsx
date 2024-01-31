@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import { useSpring, animated } from 'react-spring';
 import './Services.css'; // Import the CSS file
 import { Link } from 'react-router-dom';
+import GoToTop from './gotoTop/goToTop';
 
 const ServiceCard = ({ iconClass, title, description, imageUrl ,path}) => {
   const props = useSpring({
@@ -126,6 +127,7 @@ const Services = () => {
               path={service.path}
             />
           ))}
+           <GoToTop/>
         </div>
       </div>
     </div>

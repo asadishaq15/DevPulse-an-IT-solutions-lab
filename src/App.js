@@ -12,6 +12,7 @@ import Faq from './components/faq';
 import Portfolio from './components/portfolio';
 import Navbar from './components/navbar';
 import Footer from './components/foot';
+import GoToTop from './components/gotoTop/goToTop';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <div className="App">
        
         <Navbar />
-
+       
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
