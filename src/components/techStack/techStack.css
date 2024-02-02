@@ -1,0 +1,44 @@
+.infinite-slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin: 0 auto;
+}
+
+.slider-track {
+  display: flex;
+  animation: slideAnimation 10s linear infinite; /* Adjust the animation duration as needed */
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.5s ease-in-out;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  40% {
+    transform: translateX(-200%);
+  }
+  60% {
+    transform: translateX(-300%);
+  }
+  80% {
+    transform: translateX(-400%);
+  }
+  100% {
+    transform: translateX(-500%);
+  }
+}

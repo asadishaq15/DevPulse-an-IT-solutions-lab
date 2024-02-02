@@ -17,6 +17,7 @@ import Footer from './components/foot';
 import Portfolio from './components/portfolio';
 import { BrowserRouter } from 'react-router-dom';
 import Carousel from './components/caorusel/carouselComp';
+import TechStack from './components/techStack/techStack';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,7 +29,7 @@ root.render(
     {/* <App /> */}
    {/* <Home/> */}
    {/* <About/> */}
-   <Services/>
+   {/* <Services/> */}
    {/* <Testimonials/> */}
    {/* <Clients/> */}
   {/* <TeamSection/> */}
@@ -37,7 +38,7 @@ root.render(
   {/* <Footer/> */}
   {/* <Portfolio/> */}
 {/* <Carousel/> */}
-
+<TechStack/>
   </BrowserRouter>
  
   </React.StrictMode>
