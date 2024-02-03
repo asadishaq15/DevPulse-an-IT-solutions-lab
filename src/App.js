@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import './App.css';
 import Home from './components/home';
 import About from './components/about';

@@ -4,6 +4,7 @@ import './index.css';
 import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import Careers from './components/careers';
 import Home from './components/home';
 import About from './components/about';
@@ -18,6 +19,8 @@ import Portfolio from './components/portfolio';
 import { BrowserRouter } from 'react-router-dom';
 import Carousel from './components/caorusel/carouselComp';
 import TechStack from './components/techStack/techStack';
+import PortfolioStats from './components/portfolioStats/portfolioStats';
+import WelcomeMessage from './components/welcomeMesg/welcomeMessage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,7 +32,9 @@ root.render(
     {/* <App /> */}
    {/* <Home/> */}
    {/* <About/> */}
-   {/* <Services/> */}
+   <Carousel/>
+   <WelcomeMessage/>
+   <Services/>
    {/* <Testimonials/> */}
    {/* <Clients/> */}
   {/* <TeamSection/> */}
@@ -37,8 +42,10 @@ root.render(
   {/* <FAQ/> */}
   {/* <Footer/> */}
   {/* <Portfolio/> */}
-{/* <Carousel/> */}
-<TechStack/>
+
+{/* <TechStack/> */}
+{/* <PortfolioStats/> */}
+
   </BrowserRouter>
  
   </React.StrictMode>
